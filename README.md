@@ -70,7 +70,8 @@ Quick links to personal playlists and profile"
 As a user, I want easy access to my playlists from the dashboard, so that I can start playing music faster.
 As a user, I want a quick link to my profile, so that I can update or check my settings conveniently.
 
-
+User Persona: 
+<img width="720" height="656" alt="image" src="https://github.com/user-attachments/assets/a599bcff-4b0a-4f55-8f94-6e236a6434b6" />
 
 WireFrame:
 
