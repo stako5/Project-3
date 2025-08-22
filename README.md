@@ -1,5 +1,9 @@
 # Project-3 STOPIFY APP
 
+Overview:
+
+This project is a full-stack music streaming app inspired by Spotify. Users can sign up, log in (using username), browse songs, create personal playlists, and stream music. The README outlines the main epics (major features), username-based authentication, and guides for setting up a user profile.
+
 User Authentication Epic
 Register/login using username + password (no emails)
 
