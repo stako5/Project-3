@@ -78,6 +78,9 @@ WireFrame:
 <img width="1523" height="1078" alt="playlist" src="https://github.com/user-attachments/assets/89f4c17d-a636-4e74-816a-0d8d63ac90ac" />
 <img width="1391" height="1132" alt="Lidrary" src="https://github.com/user-attachments/assets/7a192a6c-bcec-4205-b59c-74e19352fce3" />
 <img width="1401" height="1076" alt="Login" src="https://github.com/user-attachments/assets/b945487e-67a7-4e24-89b3-e309d81a4f35" />
+<img width="720" height="478" alt="image" src="https://github.com/user-attachments/assets/e504d545-adbc-4321-b324-0abef56f33cd" />
+
+
 
 
 
