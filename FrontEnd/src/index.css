@@ -5,12 +5,25 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #5748db;
-
+  background: linear-gradient(270deg, #b254e9, #7e39fd, #6944ec, #4b2eee);
+  background-size: 800% 800%;
+  animation: gradientBG 10s ease infinite;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Header */
@@ -75,7 +88,7 @@
 .nav-btn:hover,
 .nav-btn:focus {
   background: var(--accent);
-  color: #fff;
+  color: #0e0d0d;
   box-shadow: 0 2px 14px 0 rgba(41, 151, 255, 0.11);
 }
 /* NavBar */
