@@ -7,7 +7,7 @@ exports.up = function(knex) {
     table.increments()
     table.string('username')
     table.string('password')
-    table.string('playlist_id')
+    table.string('playlists_id')
   })
 };
 
