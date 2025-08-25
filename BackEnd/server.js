@@ -9,12 +9,12 @@ app.use(cors());
 
 
 
-// app.get('/', (req,res) => {
+// app.get('/api/', (req,res) => {
 //     res.status(200).send(`Good request`);
 // });
 
 //get all song data
-app.get('/songs', (req, res) => {
+app.get('/api/songs', (req, res) => {
     knex('songs')
         .select('*')
         .from('songs')
@@ -25,8 +25,8 @@ app.get('/songs', (req, res) => {
             }
         })
 })
-//get all playlists data
-app.get('/playlists', (req, res) => {
+//get a/apill playlists data
+app.get('/api/playlists', (req, res) => {
     knex('playlists')
         .select('*')
         .from('playlists')
@@ -37,8 +37,8 @@ app.get('/playlists', (req, res) => {
             }
         })
 })
-//get all users data
-app.get('/users', (req, res) => {
+//get a/apill users data
+app.get('/api/users', (req, res) => {
     knex('users')
         .select('*')
         .from('users')
@@ -49,8 +49,8 @@ app.get('/users', (req, res) => {
             }
         })
 })
-//get all albums data
-app.get('/albums', (req, res) => {
+//get a/apill albums data
+app.get('/api/albums', (req, res) => {
     knex('albums')
         .select('*')
         .from('albums')
@@ -61,8 +61,8 @@ app.get('/albums', (req, res) => {
             }
         })
 })
-//get all artists data
-app.get('/artists', (req, res) => {
+//get a/apill artists data
+app.get('/api/artists', (req, res) => {
     knex('artists')
         .select('*')
         .from('artists')
