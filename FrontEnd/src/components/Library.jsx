@@ -25,12 +25,19 @@ function Library() {
           <GenreList />
         </div>
         <div className="results">
-          <div className="album">
+          <ul>
+            {songsData.map((song) => (
+              <li key={song.id}>
+                {song.songname} {song.genre}
+              </li>
+            ))}
+          </ul>
+          {/* <div className="album">
             <AlbumCard />
           </div>
           <div className="details">
             <Details />
-          </div>
+          </div> */}
         </div>
       </body>
     </>
