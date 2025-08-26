@@ -8,7 +8,9 @@ import "../CSS/Library.css";
 
 function Library() {
   const { songsData } = useContext(APIContext);
+  
   if (typeof songsData !== "object") {
+    songsData = [{id: 1, genre: 'hiphop', songname: 'test'}];
     console.log("error");
   } else {
     console.log(songsData);
@@ -25,19 +27,23 @@ function Library() {
           <GenreList />
         </div>
         <div className="results">
-          <ul>
-            {songsData.map((song) => (
-              <li key={song.id}>
-                {song.songname} {song.genre}
-              </li>
+          {/* <div>
+            {songsData.map(show => (
+              <AlbumCard key={songsData.id} id={songsData.id} genre={songsData.genre} songname={songsData.songname} />              
             ))}
-          </ul>
-          {/* <div className="album">
-            <AlbumCard />
+          </div> */}
+          {songsData ? <div className="album">
+            {songsData.map(song => 
+              <AlbumCard key={songsData.id} id={songsData.id} genre={songsData.genre} songname={songsData.songname} />
+            )}
           </div>
+          :  <h1>Loading...</h1>
+        }
+
+          
           <div className="details">
             <Details />
-          </div> */}
+          </div>
         </div>
       </body>
     </>

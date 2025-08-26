@@ -1,25 +1,27 @@
 import { useContext, useState } from "react";
 import { APIContext } from "./Context";
 
-function Details() {
+function Details(id) {
+  let clickId = id;
   const { songsData, playlistsData, albumsData, artistsData } =
     useContext(APIContext);
-
-  if (typeof songsData !== "object") {
+  const [song, setSong] = useState([{id: 1, genre: 'hiphop', songname: 'test'}]) 
+    if (typeof songsData !== "object") {
     console.log("error");
-  } else {
+    } else {
     console.log(songsData);
-  }
+  }  
+  function set(clickId){
+      for(let item of songsData) {
+        if(item.id == id) {
+          setSong(item)
+        }
+      }
+    }
+    set()
   return (
     <>
-      <h3>details</h3>
-      <ul>
-        {songsData.map((song) => (
-          <li key={song.id}>
-            {song.songname} {song.genre}
-          </li>
-        ))}
-      </ul>
+      {song.id}
     </>
   );
 }
