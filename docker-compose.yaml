@@ -1,6 +1,7 @@
 services: 
   db: 
     image: "postgres:16.3"
+    container_name: db
     environment: 
       - POSTGRES_USER=${PGUSER}
       - POSTGRES_PASSWORD=${PGPASSWORD}
@@ -15,21 +16,23 @@ services:
 
   backend:
     build: "backend"
+    container_name: backend
     depends_on:
       - "db"
     ports: 
-      - ${DBPORT}:8080
-    restart: on-failure
+      - 8080:8080
     environment:
-      - DB_USER=${DBUSER}
-      - DB_PASSWORD={DBPASSWORD}
-      - DB_HOST=${DBHOST}
-      - DB_DATABASE=${DBDATABASE}
+      - DB_USER=${PGUSER}
+      - DB_PASSWORD={PGPASSWORD}
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_DATABASE=${PGDATABASE}
     networks:
       - myNetwork
 
   frontend:
     build: "frontend"
+    container_name: frontend
     depends_on:
       - "backend"
     command: npm run dev
