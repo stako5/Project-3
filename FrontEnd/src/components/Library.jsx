@@ -1,13 +1,17 @@
 import { useState, useContext } from "react";
-import {APIContext} from './Context'
+import { APIContext } from "./Context";
 import NavBar from "./NavBar";
+import Details from "./Details";
+import GenreList from "./GenreList";
+import AlbumCard from "./AlbumCard";
+import "../CSS/Library.css";
 
 function Library() {
   const { songsData } = useContext(APIContext);
   if (typeof songsData !== "object") {
-    console.log('error')
+    console.log("error");
   } else {
-     console.log( songsData);
+    console.log(songsData);
   }
 
   return (
@@ -16,6 +20,19 @@ function Library() {
         <h1>STOPIFY</h1>
         <NavBar />
       </header>
+      <body className="body">
+        <div className="genrelist">
+          <GenreList />
+        </div>
+        <div className="results">
+          <div className="album">
+            <AlbumCard />
+          </div>
+          <div className="details">
+            <Details />
+          </div>
+        </div>
+      </body>
     </>
   );
 }
