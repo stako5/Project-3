@@ -1,0 +1,12 @@
+import { useContext, useState } from "react";
+import { APIContext } from "./Context";
+
+function GenreList() {
+  return (
+    <>
+      <h1>test</h1>
+    </>
+  );
+}
+
+export default GenreList;
