@@ -1,6 +1,7 @@
 FROM node:20
-WORKDIR /app
+WORKDIR /BackEnd
+COPY . ./BackEnd
 COPY package.json ./
-COPY knexfile.js ./
 COPY .env ./
 RUN npm install
+CMD ["sh", "-c", "npx knex migrate:latest && npx knex seed:run && nodemon server.js"]
