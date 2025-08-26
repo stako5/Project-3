@@ -1,7 +1,0 @@
-FROM node:20
-WORKDIR /BackEnd
-COPY . ./BackEnd
-COPY package.json ./
-COPY .env ./
-RUN npm install
-CMD ["sh", "-c", "npx knex migrate:latest && npx knex seed:run && nodemon server.js"]

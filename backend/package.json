@@ -2,9 +2,10 @@
   "name": "project-3",
   "version": "1.0.0",
   "description": "Overview:",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "dev": "npx knex migrate:rollback && npx knex migrate:latest && npx knex seed:run && nodemon server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
