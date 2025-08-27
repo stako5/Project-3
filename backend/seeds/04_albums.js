@@ -4,11 +4,11 @@
  */
 const { faker } = require('@faker-js/faker');
 const fakeAlbums = []
-const desiredfakeAlbums = 10
+const desiredfakeAlbums = 25
 let fakeId = 1
 
 for (let i = 0; i < desiredfakeAlbums; i++) {
-  fakeAlbums.push({id: fakeId, name: faker.music.songName(), description: faker.lorem.sentence()  })
+  fakeAlbums.push({id: fakeId, name: faker.music.songName(), description: faker.lorem.sentence(), release_date: faker.date.past(), cover_art: faker.image.urlPicsumPhotos()})
   fakeId++;
 }
 

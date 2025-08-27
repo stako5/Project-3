@@ -5,7 +5,7 @@
 
 let fakeArtist = [];
 let fakeId = 1
-let desiredFakeArtist = 10;
+let desiredFakeArtist = 25;
 for (let i = 0; i < desiredFakeArtist; i++) {
     fakeArtist.push({id: fakeId, artists_id: fakeId, songs_id: fakeId})
 

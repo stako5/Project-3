@@ -84,9 +84,9 @@ WireFrame:
 
 <img width="1401" height="1076" alt="Login" src="https://github.com/user-attachments/assets/b945487e-67a7-4e24-89b3-e309d81a4f35" />
 
-ERD:
-<img width="720" height="478" alt="image" src="https://github.com/user-attachments/assets/e504d545-adbc-4321-b324-0abef56f33cd" />
 
+ERD:
+![alt text](image.png)
 TO Read API use these
 Local URLs:
 

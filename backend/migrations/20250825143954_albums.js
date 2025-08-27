@@ -7,6 +7,8 @@ exports.up = function(knex) {
     table.increments()
     table.string('name')
     table.string('description')
+    table.string('release_date')
+    table.string('cover_art')
   })
 };
 

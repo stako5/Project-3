@@ -1,10 +1,10 @@
 /**
  * @param { import("knex").Knex } knex
- * @returns { Promise<void> } 
+ * @returns { Promise<void> }
  */
 const { faker } = require('@faker-js/faker');
 const fakePlaylists = []
-const desiredFakePlaylists = 10
+const desiredFakePlaylists = 25
 let fakeId = 1
 
 for (let i = 0; i < desiredFakePlaylists; i++) {

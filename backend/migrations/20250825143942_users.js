@@ -8,6 +8,7 @@ exports.up = function(knex) {
     table.string('username')
     table.string('password')
     table.string('playlists_id')
+    table.string('email')
   })
 };
 

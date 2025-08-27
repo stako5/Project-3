@@ -7,6 +7,9 @@ exports.up = function (knex) {
     table.increments();
     table.string("genre", 256);
     table.string("songname");
+    table.string('release_date')
+    table.string('song_length')
+    table.string('cover_art')
   });
 };
 

@@ -4,7 +4,7 @@
  */
 let fakePlaylists = [];
 let fakeId = 1
-let desiredFakePlaylists = 10;
+let desiredFakePlaylists = 25;
 for (let i = 0; i < desiredFakePlaylists; i++) {
     fakePlaylists.push({id: fakeId, playlists_id: fakeId, songs_id: fakeId})
 
