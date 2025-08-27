@@ -1,15 +1,15 @@
-services: 
-  db: 
+services:
+  db:
     image: "postgres:16.3"
     container_name: db
-    environment: 
+    environment:
       - POSTGRES_USER=${PGUSER}
       - POSTGRES_PASSWORD=${PGPASSWORD}
       - POSTGRES_DB=${PGDATABASE}
-    volumes: 
+    volumes:
       - stopify_storage:/var/lib/postgresql/data
-    ports: 
-      - 52546:5432
+    ports:
+      - 5432:5432
     networks:
       - myNetwork
 
@@ -18,7 +18,7 @@ services:
     container_name: backend
     depends_on:
       - "db"
-    ports: 
+    ports:
       - 8080:8080
     environment:
       - DB_USER=${PGUSER}
@@ -36,15 +36,15 @@ services:
     container_name: frontend
     depends_on:
       - "backend"
-    ports: 
+    ports:
       - 5173:5173
     networks:
       - myNetwork
 
 
 volumes:
-  stopify_storage: 
-  
+  stopify_storage:
+
 networks:
   myNetwork:
     driver: bridge
