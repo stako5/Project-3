@@ -1,16 +1,14 @@
 import { useState } from "react";
-
+import "../CSS/SideBar.css";
 function SideBar() {
   return (
     <>
-      <div className="sidebar"> 
+      <div className="sidebar">
         <aside>
-          <ul>
-          
-          </ul>
+          <h3>Test</h3>
         </aside>
       </div>
-    </> 
+    </>
   )
 }
 

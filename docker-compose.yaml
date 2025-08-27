@@ -40,6 +40,9 @@ services:
       - 5173:5173
     networks:
       - myNetwork
+    environment:
+    - CHOKIDAR_USEPOLLING=true
+    - WATCHPACK_POLLING=true
 
 
 volumes:

@@ -100,3 +100,17 @@ TO see Webpage use
 Frontend URL:
 
 - http://localhost:5173
+
+Docker Command for local env
+docker run --rm --name pg-docker -e POSTGRES_PASSWORD=docker -d -p 5432:5432 \
+-v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres
+
+docker exec -it <container #> bash
+psql -U postgres
+CREATE DATABASE mydb;
+\c mydb
+
+~Project-3/backend: npx knex migrate:rollback && npx knex migrate:latest && npx knex seed:run
+~Project-3/backend: npm run dev
+~Project-3/backend: cd ../frontend
+~Project-3/frontend: npm run dev
