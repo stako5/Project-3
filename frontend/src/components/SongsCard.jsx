@@ -7,7 +7,7 @@ import NavBar from "./NavBar";
 function AlbumCard() {
   const { songsData } = useContext(APIContext);
   const navigate = useNavigate("");
-  console.log(songsData);
+
   return (
     <>
       <header className="card-header">
