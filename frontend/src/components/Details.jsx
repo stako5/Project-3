@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import { APIContext } from "./Context";
-import { useParams } from "react-router-dom"
+import { useParams, Link, useNavigate } from "react-router-dom"
 import NavBar from "./NavBar";
 
 function Details() {
@@ -8,16 +8,11 @@ function Details() {
   const { songsData, artistsData } = useContext(APIContext);
   const [data, setData] = useState([{id: 0}])
   const [data1, setData1] = useState([{id: 0}])
+  const navigate = useNavigate()
   var song = songsData.filter(song => song.id == id)
   var artist = artistsData.filter(artist => artist.id == id)
 
-  // useEffect(()=> {
-  //   for ( let i = 0; i <= songsData.length; i++ ) {
-  //     if (songsData[i].id === value ) {
-  //       setData(song)
-  //     }
-  //   }
-  // }, [])
+
   useEffect(() => {
     setData(song)
     console.log(song)
@@ -35,7 +30,8 @@ function Details() {
         <p>Release Date: {data[0].release_date}</p>
         <p>{data1[0].name}</p>
         <p>Bio: {data1[0].bio}</p>
-
+        {/* <Link to='/Library'><button>Go Back</button></Link> */}
+        <button onClick={() => navigate('/Library')}>Go Back</button>
       </main>
       <footer className="footer">
         &copy; 2025 STOPIFY. All rights reserved.
