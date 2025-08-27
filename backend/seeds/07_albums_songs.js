@@ -4,7 +4,7 @@
  */
 let fakeAlbums = [];
 let fakeId = 1
-let desiredFakeAlbums = 10;
+let desiredFakeAlbums = 25;
 for (let i = 0; i < desiredFakeAlbums; i++) {
     fakeAlbums.push({id: fakeId, albums_id: fakeId, songs_id: fakeId})
 

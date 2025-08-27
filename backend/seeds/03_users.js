@@ -4,7 +4,7 @@
  */
 const { faker } = require('@faker-js/faker');
 const fakeUsers = []
-const desiredFakeUsers = 10
+const desiredFakeUsers = 25
 let fakeId = 1
 
 for (let i = 0; i < desiredFakeUsers; i++) {
