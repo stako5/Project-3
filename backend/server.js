@@ -40,6 +40,7 @@ app.get('/api/playlists', (req, res) => {
 })
 //patch playlist array
 app.patch('/api/playlists/:playlists_id', (req, res) => {
+    console.log(req.body)
     let playlistsId = req.params.playlists_id
     let playlistsName = req.body.name
     let playlistsDescription = req.body.description
