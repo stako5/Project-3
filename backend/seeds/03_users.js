@@ -8,7 +8,13 @@ const desiredFakeUsers = 10
 let fakeId = 1
 
 for (let i = 0; i < desiredFakeUsers; i++) {
-  fakeUsers.push({id: fakeId, username: faker.internet.username(), password: faker.internet.password({length: 20 }), playlists_id: fakeId})
+  fakeUsers.push({
+    id: fakeId,
+    username: faker.internet.username(),
+    password: faker.internet.password({length: 20 }),
+    playlists_id: fakeId,
+    email: faker.internet.email()
+  })
   fakeId++;
 }
 

@@ -7,6 +7,7 @@ exports.up = function(knex) {
     table.increments()
     table.string('name')
     table.string('albums_song_id')
+    table.string('bio')
   })
 };
 

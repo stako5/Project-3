@@ -12,6 +12,9 @@ for (let i = 0; i < desiredFakeSongs; i++) {
     id: fakeId,
     genre: faker.music.genre(),
     songname: faker.music.songName(),
+    release_date: faker.date.past(),
+    song_length: faker.number.int({min: 120, max: 420}),
+    cover_art: faker.image.urlPicsumPhotos()
   });
   fakeId++;
 }

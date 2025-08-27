@@ -8,7 +8,11 @@ const desiredfakeArtist = 10
 let fakeId = 1
 
 for (let i = 0; i < desiredfakeArtist; i++) {
-  fakeArtist.push({id: fakeId, name: faker.music.artist(), albums_song_id: fakeId})
+  fakeArtist.push({id: fakeId,
+    name: faker.music.artist(),
+    albums_song_id: fakeId,
+    bio: faker.lorem.sentence()
+  })
   fakeId++;
 }
 
