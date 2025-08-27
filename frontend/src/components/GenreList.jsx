@@ -1,10 +1,14 @@
 import { useContext, useState } from "react";
 import { APIContext } from "./Context";
+import NavBar from "./NavBar";
 
 function GenreList() {
   return (
     <>
-      <h1>test</h1>
+      <header className="card-header">
+        <h1>STOPIFY</h1>
+        <NavBar />
+      </header>
     </>
   );
 }
