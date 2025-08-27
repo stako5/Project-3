@@ -1,3 +1,35 @@
-.sidebar {
-  color:black
+.side-section {
+  flex: 0 0 220px;
+  max-width: 260px;
+  min-width: 180px;
+  height: 100vh;
+  background: linear-gradient(135deg, #242526 80%, #393f43 100%);
+  color: #fff;
+  overflow-y: auto;
+  padding: 32px 22px 28px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  border-radius: 22px;
+  box-shadow: 0 8px 32px #16171a1a, 0 1.5px 4px #18181826;
+  border: 1px solid #242526;
+  transition:
+    background 0.25s,
+    color 0.18s,
+    box-shadow 0.15s;
 }
+
+/* Subtle glass effect/backdrop for extra depth (optional) */
+@supports (backdrop-filter: blur(8px)) {
+  .side-section {
+    backdrop-filter: blur(8px) saturate(110%);
+    background: rgba(34, 38, 43, 0.85);
+  }
+}
+
+/* Sidebar heading */
+.side-section aside h3 {
+  font-size: 1.15rem;
+  font-family: 'SF Pro Display', 'Montserrat', 'Arial', sans
