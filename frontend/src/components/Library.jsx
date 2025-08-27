@@ -1,4 +1,5 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom"
 import { APIContext } from "./Context";
 import NavBar from "./NavBar";
 import Details from "./Details";
@@ -8,44 +9,40 @@ import "../CSS/Library.css";
 
 function Library() {
   const { songsData } = useContext(APIContext);
-  
+  const [id, setId] = useState(1)
+
+
   if (typeof songsData !== "object") {
-    songsData = [{id: 1, genre: 'hiphop', songname: 'test'}];
     console.log("error");
   } else {
     console.log(songsData);
+    setId(songsData.id);
   }
 
+const [data, setData] = useState(null);
+
+
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const response = await fetch(`http://localhost:3001/api/songs`);
+      if(!response.ok) throw new Error('Failed ');
+      const result = await response.json();
+      setData(result);      
+    } catch (err){
+      navigate('/error')
+    }
+  }
+  fetchData()
+}, [data])
+
+if(!data) return <h1>Loading...</h1>;
   return (
     <>
-      <header className="header">
-        <h1>STOPIFY</h1>
-        <NavBar />
-      </header>
-      <body className="body">
-        <div className="genrelist">
-          <GenreList />
-        </div>
-        <div className="results">
-          {/* <div>
-            {songsData.map(show => (
-              <AlbumCard key={songsData.id} id={songsData.id} genre={songsData.genre} songname={songsData.songname} />              
-            ))}
-          </div> */}
-          {songsData ? <div className="album">
-            {songsData.map(song => 
-              <AlbumCard key={songsData.id} id={songsData.id} genre={songsData.genre} songname={songsData.songname} />
-            )}
-          </div>
-          :  <h1>Loading...</h1>
-        }
-
-          
-          <div className="details">
-            <Details />
-          </div>
-        </div>
-      </body>
+      <h1>details</h1>
+      <button onClick={() => navigate('/new', {state: {songData: data}})}>
+        seeSongDetails
+      </button>
     </>
   );
 }

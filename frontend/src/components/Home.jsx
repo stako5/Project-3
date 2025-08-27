@@ -12,7 +12,7 @@ function Home() {
         <h1>STOPIFY</h1>
         <NavBar />
       </header>
-      <body>
+      <div>
         <main>
           <div id="sidebar">
             <Sidebar />
@@ -25,7 +25,7 @@ function Home() {
         <footer class="footer">
           &copy; 2025 STOPIFY. All rights reserved.
         </footer>
-      </body>
+      </div>
     </>
   );
 }
