@@ -1,11 +1,14 @@
 const express = require('express');
 const app = express();
-const port = 3001
+const port = process.env.PORT || 8080
 const cors = require('cors');
 const knex = require('knex')(require('./knexfile.js')['development']);
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: ['http://localhost:5173', 'http://frontend:5173'],
+    credentials: true
+}));
 
 
 
@@ -25,7 +28,7 @@ app.get('/api/songs', (req, res) => {
             }
         })
 })
-//get a/apill playlists data
+//get all playlists data
 app.get('/api/playlists', (req, res) => {
     knex('playlists')
         .select('*')
@@ -37,7 +40,7 @@ app.get('/api/playlists', (req, res) => {
             }
         })
 })
-//get a/apill users data
+//get all users data
 app.get('/api/users', (req, res) => {
     knex('users')
         .select('*')
@@ -49,7 +52,7 @@ app.get('/api/users', (req, res) => {
             }
         })
 })
-//get a/apill albums data
+//get all albums data
 app.get('/api/albums', (req, res) => {
     knex('albums')
         .select('*')
@@ -61,7 +64,7 @@ app.get('/api/albums', (req, res) => {
             }
         })
 })
-//get a/apill artists data
+//get all artists data
 app.get('/api/artists', (req, res) => {
     knex('artists')
         .select('*')
@@ -77,7 +80,7 @@ app.get('/api/artists', (req, res) => {
 
 
 //end
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
     console.log(`express is running on ${port}`);
 })
 
