@@ -12,7 +12,7 @@ JWT-based sessions
 Logout
 
 2. Music Library Epic
-Browse/search songs by title/artist/genre:
+   Browse/search songs by title/artist/genre:
 
 As a user, I want to search songs by title, so that I can quickly find a specific track.
 As a user, I want to search by artist, so that I can listen to all tracks from my favorite performer.
@@ -24,7 +24,7 @@ As a user, I want to view a list of all available tracks, so that I can browse a
 As a user, I want to see metadata (title, artist, duration, album) with each track, so that I know more about what I’m selecting.
 
 3. Streaming Epic
-Play/pause/skip audio tracks:
+   Play/pause/skip audio tracks:
 
 As a user, I want to play a song, so that I can listen to music.
 As a user, I want to pause playback, so that I can temporarily stop without losing my place.
@@ -37,7 +37,7 @@ As a user, I want to view the current song details (title, artist, album art), s
 As a user, I want a progress bar, so that I can see how much of the song has played.
 
 4. Profile & Personalization Epic
-Edit/view profile and avatar:
+   Edit/view profile and avatar:
 
 As a user, I want to create and edit my profile details, so that I can personalize my account.
 As a user, I want to upload or change my avatar, so that I can customize my identity.
@@ -49,7 +49,7 @@ As a user, I want to see a list of my favorite songs, so that I can easily repla
 As a user, I want to view my created playlists, so that I can access and manage them quickly.
 
 5. Playlist Epic
-Create/delete/rename playlists:
+   Create/delete/rename playlists:
 
 As a user, I want to create new playlists, so that I can organize songs into collections I like.
 As a user, I want to rename playlists, so that I can adjust them as my themes or preferences change.
@@ -61,7 +61,7 @@ As a user, I want to add songs to a playlist, so that I can curate custom listen
 As a user, I want to remove songs from a playlist, so that I can update my collections.
 
 6. Dashboard Epic
-Recently played songs:
+   Recently played songs:
 
 As a user, I want to see my recently played songs, so that I can quickly jump back to tracks I enjoyed.
 
@@ -70,7 +70,7 @@ Quick links to personal playlists and profile"
 As a user, I want easy access to my playlists from the dashboard, so that I can start playing music faster.
 As a user, I want a quick link to my profile, so that I can update or check my settings conveniently.
 
-User Persona: 
+User Persona:
 
 <img width="720" height="656" alt="image" src="https://github.com/user-attachments/assets/a599bcff-4b0a-4f55-8f94-6e236a6434b6" />
 
@@ -87,12 +87,16 @@ WireFrame:
 ERD:
 <img width="720" height="478" alt="image" src="https://github.com/user-attachments/assets/e504d545-adbc-4321-b324-0abef56f33cd" />
 
+TO Read API use these
+Local URLs:
 
+- http://localhost:8080/api/songs
+- http://localhost:8080/api/playlists
+- http://localhost:8080/api/users
+- http://localhost:8080/api/albums
+- http://localhost:8080/api/artists
 
+TO see Webpage use
+Frontend URL:
 
-
-
-
-
-
-
+- http://localhost:5173
