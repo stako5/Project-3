@@ -7,11 +7,8 @@ import "../CSS/Home.css";
 import { APIContext } from "./Context";
 
 function Home() {
-  const { songsData, playlistsData, usersData, albumsData, artistsData } = useContext(APIContext);
-  if (!songsData || !playlistsData || !usersData || !albumsData || !artistsData){
-    return (<h1>Loading
-    </h1>)
-  } else {
+  const { songsData } = useContext(APIContext);
+
   return (
     <>
       <header className="header">
@@ -25,7 +22,18 @@ function Home() {
           </div>
           <div id="compnent-container">
             <PlaylistCard />
-            <ArtistCard />
+            {songsData && songsData.length > 0 ? (
+              <ul>
+                {songsData.map((songs) => (
+                  <li key={songs.id}>
+                    <img src={songs.cover_art} alt={songs.name} />
+                    <label>{songs.name}</label>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <div>No albums to display.</div>
+            )}
           </div>
         </main>
         <footer className="footer">
@@ -34,7 +42,6 @@ function Home() {
       </div>
     </>
   );
-}
 }
 
 export default Home;

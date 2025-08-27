@@ -1,4 +1,95 @@
-.albumTitle .title .genre{
-    color: black;
 
+#albumlist {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 2.2rem;
+  list-style: none;      
+  padding: 0;
+  margin: 2.5rem 0;
+  justify-items: center;
+}
+
+#album-card {
+  background: rgba(255, 255, 255, 0.72);   
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(20, 20, 20, 0.11);
+  padding: 1rem 1rem 0.8rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.18s cubic-bezier(.46,.03,.52,.96),
+              box-shadow 0.18s cubic-bezier(.46,.03,.52,.96);
+  min-width: 300px;
+  width: 250px;
+  backdrop-filter: blur(9px);
+  cursor: pointer;
+}
+
+#album-card:hover {
+  transform: scale(1.05) translateY(-6px);
+  box-shadow: 0 14px 36px rgba(36, 40, 120, 0.17),
+              0 2px 10px rgba(80, 105, 130, 0.10);
+}
+
+#album-pic {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.7rem;
+  background: #e9eaf7;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+  transition: transform 0.22s cubic-bezier(.46,.03,.52,.96),
+              box-shadow 0.22s cubic-bezier(.46,.03,.52,.96);
+}
+
+#album-card:hover .album-pic {
+  transform: scale(1.10) rotate(-2deg);
+  box-shadow: 0 8px 16px rgba(80,90,180,0.18);
+}
+
+
+#album-card label {
+  color: #23233b;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 0.15rem;
+  word-break: break-word;
+  line-height: 1.18;
+  letter-spacing: -0.06px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 110px;
+}
+
+.nice-btn {
+  padding: 0.55rem 1.4rem;
+  border: none;
+  border-radius: 13px;
+  background: linear-gradient(90deg, #007aff, #409cff 85%);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", Roboto, Arial, sans-serif;
+  box-shadow: 0 3px 12px rgba(0,122,255,0.08);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.16s, transform 0.18s;
+  outline: none;
+  letter-spacing: 0.02em;
+}
+
+
+.nice-btn:hover, .nice-btn:focus {
+  background: linear-gradient(90deg, #005ecc 20%, #3393e9 100%);
+  box-shadow: 0 8px 22px rgba(0,122,255,0.17);
+  transform: translateY(-2px) scale(1.045);
+}
+
+
+.nice-btn:active {
+  background: #0062ce;
+  box-shadow: 0 2px 6px rgba(0,80,160,0.13);
+  transform: scale(0.97);
 }
