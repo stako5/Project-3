@@ -7,6 +7,7 @@ import NavBar from "./NavBar";
 function AlbumCard() {
   const { songsData } = useContext(APIContext);
   const navigate = useNavigate("");
+
   console.log(songsData);
   async function clickHelper(id) {
     const patch = {
@@ -23,6 +24,7 @@ function AlbumCard() {
       body: JSON.stringify(patch)
     })
   }
+
   return (
     <>
       <header className="card-header">

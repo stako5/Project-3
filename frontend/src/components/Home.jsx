@@ -1,13 +1,19 @@
 import { useState, useContext } from "react";
+import React from "react";
+import myTrack from "../assets/TrollSong.mp3";
 import NavBar from "./NavBar";
 import Sidebar from "./SideBar";
 import PlaylistCard from "./PlaylistCard";
-import ArtistCard from "./ArtistCard";
 import "../CSS/Home.css";
 import { APIContext } from "./Context";
 
 function Home() {
   const { songsData } = useContext(APIContext);
+  const audioRef = React.useRef(null);
+
+  const handlePlay = () => {
+    audioRef.current.play();
+  };
 
   return (
     <>
@@ -26,8 +32,9 @@ function Home() {
                 {songsData.map((songs) => (
                   <li key={songs.id}>
                     <img src={songs.cover_art} alt={songs.songname} />
-
                     <label>{songs.songname}</label>
+                    <button onClick={handlePlay}>Play Music</button>
+                    <audio ref={audioRef} src={myTrack} preload="auto" />
                   </li>
                 ))}
               </ul>
