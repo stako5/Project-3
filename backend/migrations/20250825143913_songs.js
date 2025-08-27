@@ -10,6 +10,7 @@ exports.up = function (knex) {
     table.string('release_date')
     table.string('song_length')
     table.string('cover_art')
+    table.integer('artists_id')
   });
 };
 
