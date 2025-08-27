@@ -38,6 +38,47 @@ app.get('/api/playlists', (req, res) => {
             }
         })
 })
+//patch playlist array
+app.patch('/api/playlists/:playlists_id', (req, res) => {
+    let playlistsId = req.params.playlists_id
+    let playlistsName = req.body.name
+    let playlistsDescription = req.body.description
+    let playlistsSong = req.body.song
+    knex('playlists')
+    .select('songs_array')
+    .from('playlists')
+    .where('id', playlistsId)
+    .returning('songs_array')
+    .then(data => {
+        let output = `${data[0].songs_array}, ${playlistsSong}`
+        console.log(data)
+        console.log(output)
+        knex('playlists')
+        .from('playlists')
+        .where('id', playlistsId)
+        .update({"id": playlistsId, "name": playlistsName, "description": playlistsDescription, "songs_array": output})
+        .returning('songs_array')
+        .then(data => {
+            res.status(201).send(data)
+        })
+        .catch((err) => {
+                if (err) {
+                    res.status(404).send(`failed to patch: ${err}`)
+                }
+        })
+    })
+    .catch((err) => {
+                if (err) {
+                    res.status(404).send(`failed to patch: ${err}`)
+                }
+    })
+})
+
+// await knex("playlists")
+//   .where("id", 1) // playlist you want to update
+//   .update({
+//     songs: knex.raw("array_append(songs, ?)", [123]) // 👈 123 = new song_id
+//   });
 //get all users data
 app.get('/api/users', (req, res) => {
     knex('users')
@@ -110,6 +151,7 @@ app.get('/api/playlists_songs', (req, res) => {
             }
         })
 })
+
 // get all songs by a certain artist
 app.get('/api/songs_by_artist/:artistsId', (req,res) => {
     let artistsId = req.params.artistsId
