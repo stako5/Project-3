@@ -1,99 +1,81 @@
-.main-content {
-  display: flex;
-  flex-direction: row;
-  min-height: 82vh;
-  background: #f7f8fc;
-  gap: 2.2rem;
-  border-radius: 22px;
-  /* For smooth look when sidebar is glassy/frosted */
-  box-shadow: 0 4px 24px #2323330c;
-}
 
-/* Main content container (the card grid area) */
-#component-container {
-  flex: 1 1 auto;
-  padding: 2.3rem 1.8rem 2.5rem 2.3rem;
-  background: linear-gradient(133deg, #f8f8fa 85%, #e8ecf7 100%);
-  border-radius: 20px;
-  min-width: 0;
-  max-width: 100vw;
-  overflow-x: auto;
-  /* Subtle border for Apple-style pop */
-  border: 1.5px solid #e6eefa;
-  box-shadow: 0 3px 18px #dadbe733, 0 2px 6px #b3bbc426;
-}
 
-/* Responsive grid of cards */
 .song-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(204px, 1fr));
-  gap: 1.7rem 1.6rem;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 2.1rem 2.3rem;
+  padding: 0.6rem 0;
+  justify-items: center;
+  background: #fff;                   
+  border-radius: 18px;                
+  box-shadow: 0 8px 36px rgba(32,36,90,0.08); 
+  padding: 2.2rem 1.5rem 2.3rem 1.5rem;    
+  max-width: unset;  
 }
 
-/* Song card: glassy, puffy, Apple-like */
+
 .song-card {
-  background: rgba(255,255,255,0.85);
-  padding: 1.38rem 1.2rem;
-  border-radius: 16px;
-  box-shadow: 0 3px 18px 0 #23233313, 0 1.5px 6px #bdd1fc0a;
-  transition: transform 0.13s, box-shadow 0.13s, background 0.16s;
-  cursor: pointer;
-  min-height: 105px;
+  background: rgba(255, 255, 255, 0.79);
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(36, 40, 120, 0.09);
+  padding: 1rem 0.8rem 0.9rem 0.8rem;
+  width: 30vh;
+  min-height: 69px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  cursor: pointer;
+  transition: transform 0.18s cubic-bezier(.46, .03, .52, .96), box-shadow 0.17s;
   outline: none;
-  border: 1.2px solid #e4eafc;
-  /* Subtle glass look for supported browsers */
-  backdrop-filter: blur(2.4px) saturate(106%);
-  will-change: transform, box-shadow;
+  border: none;
+  user-select: none;
 }
 
-.song-card:hover, .song-card:focus {
-  background: rgba(243, 252, 255, 0.98);
-  transform: translateY(-7px) scale(1.043);
-  box-shadow: 0 13px 36px 0 #23233321, 0 2.5px 8px #7db6fa33;
-  border-color: #b7d6fe;
+.song-card:hover,
+.song-card:focus {
+  transform: scale(1.06) translateY(-6px);
+  box-shadow: 0 13px 28px rgba(0,122,255,0.15), 0 2px 10px rgba(80,105,130,0.07);
+  background: rgba(245, 249, 255, 0.94);
+}
+
+.song-card:active {
+  transform: scale(0.98);
 }
 
 .song-title {
-  font-size: 1.15rem;
-  font-weight: 600;
-  letter-spacing: 0.1px;
-  color: #21262b;
+  color: #1d1d2b;
+  font-size: 1rem;
+  font-weight: 700;
   text-align: center;
-  word-break: break-word;
-  font-family: 'SF Pro Display', 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  letter-spacing: -0.04px;
+  padding: 0 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  transition: color 0.10s;
 }
 
-/* Responsive breakpoints for tablet/mobile */
+
+.empty-message {
+  text-align: center;
+  color: #808096;
+  font-size: 1.09rem;
+  margin: 2.7rem 0;
+  opacity: 0.75;
+  letter-spacing: 0.03em;
+}
+
+
 @media (max-width: 900px) {
   .main-content {
     flex-direction: column;
-    gap: 0;
-    border-radius: 0;
-    padding: 0;
+    gap: 1.3rem;
+    padding: 0 0.7rem;
   }
-  #component-container {
-    border-radius: 0 0 16px 16px;
-    padding: 1.4rem 0.9rem;
-    box-shadow: none;
-    border: none;
-  }
-  .song-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 1.1rem 1rem;
-  }
-}
 
-@media (max-width: 600px) {
-  #component-container {
-    padding: 0.7rem 0.3rem;
-    border-radius: 0;
+  .component-container {
+    max-width: unset;
   }
-  .song-grid {
-    gap: 0.7rem 0.5rem;
-    grid-template-columns: 1fr;
-  }
+
 }

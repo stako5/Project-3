@@ -28,6 +28,9 @@ function AlbumCard() {
       ) : (
         <div>No albums to display.</div>
       )}
+      <footer className="card-footer">
+        &copy; 2025 STOPIFY. All rights reserved.
+      </footer>
     </>
   );
 }

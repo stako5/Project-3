@@ -4,18 +4,20 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import NavBar from "./NavBar";
 import "../CSS/Details.css";
 
-function Details() {
+function AlbumsDetails() {
   const { id } = useParams();
-  const { songsData, artistsData } = useContext(APIContext);
+  const { albumsData, songsData, artistsData } = useContext(APIContext);
   const [data, setData] = useState([{ id: 0 }]);
   const [data1, setData1] = useState([{ id: 0 }]);
+  const [data2, setData2] = useState([{ id: 0 }]);
   const navigate = useNavigate();
   var song = songsData.filter((song) => song.id == id);
   var artist = artistsData.filter((artist) => artist.id == id);
+  var album = albumsData.filter((album) => album.id == id);
 
   useEffect(() => {
-    setData(song);
-    console.log(song);
+    setData(album);
+    setData2(song);
     setData1(artist);
   }, []);
   return (
@@ -33,10 +35,10 @@ function Details() {
           width="400"
         />
         <p>Release Date: {data[0].release_date}</p>
-        <p>{data1[0].name}</p>
+        <p>{data[0].name}</p>
         <p>Bio: {data1[0].bio}</p>
         {/* <Link to='/Library'><button>Go Back</button></Link> */}
-        <button onClick={() => navigate("/Library")}>Go Back</button>
+        <button onClick={() => navigate("/Albums")}>Go Back</button>
       </main>
       <footer className="footer">
         &copy; 2025 STOPIFY. All rights reserved.
@@ -45,4 +47,4 @@ function Details() {
   );
 }
 
-export default Details;
+export default AlbumsDetails;

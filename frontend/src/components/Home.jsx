@@ -20,14 +20,14 @@ function Home() {
           <div id="sidebar">
             <Sidebar />
           </div>
-          <div id="compnent-container">
-            <PlaylistCard />
+          <div className="component-container">
             {songsData && songsData.length > 0 ? (
               <ul>
                 {songsData.map((songs) => (
                   <li key={songs.id}>
-                    <img src={songs.cover_art} alt={songs.name} />
-                    <label>{songs.name}</label>
+                    <img src={songs.cover_art} alt={songs.songname} />
+
+                    <label>{songs.songname}</label>
                   </li>
                 ))}
               </ul>
@@ -35,6 +35,7 @@ function Home() {
               <div>No albums to display.</div>
             )}
           </div>
+          <PlaylistCard />
         </main>
         <footer className="footer">
           &copy; 2025 STOPIFY. All rights reserved.

@@ -9,6 +9,9 @@ function GenreList() {
         <h1>STOPIFY</h1>
         <NavBar />
       </header>
+      <footer className="footer">
+        &copy; 2025 STOPIFY. All rights reserved.
+      </footer>
     </>
   );
 }

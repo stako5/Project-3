@@ -28,6 +28,9 @@ function ArtistCard() {
       ) : (
         <div>No artists to display.</div>
       )}
+      <footer className="card-footer">
+        &copy; 2025 STOPIFY. All rights reserved.
+      </footer>
     </>
   );
 }
