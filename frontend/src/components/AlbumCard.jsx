@@ -19,7 +19,7 @@ function AlbumCard() {
     <>
       <header className="card-header">
         <h1>STOPIFY</h1>
-        <button onClick={() => navigate("/Home")} class="nice-btn">
+        <button onClick={() => navigate("/Home")} className="nice-btn">
           Home
         </button>
       </header>

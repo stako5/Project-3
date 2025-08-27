@@ -8,6 +8,21 @@ function AlbumCard() {
   const { songsData } = useContext(APIContext);
   const navigate = useNavigate("");
   console.log(songsData);
+  async function clickHelper(id) {
+    const patch = {
+      name: "My Playlist",
+      description: "Words",
+      song: `${id}`
+    }
+    await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/playlists/1`, {
+      method: 'PATCH',
+      headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+      body: JSON.stringify(patch)
+    })
+  }
   return (
     <>
       <header className="card-header">
@@ -19,10 +34,12 @@ function AlbumCard() {
       {songsData && songsData.length > 0 ? (
         <ul className="songslist">
           {songsData.map((songs) => (
-            <li key={songs.id}>
-              <img src={songs.cover_art} alt={songs.name} />
-              <label>{songs.name}</label>
-            </li>
+
+              <li key={songs.id}>
+                <img src={songs.cover_art} alt={songs.songname} />
+                <label>{songs.songname}</label>
+                <button className="btn" onClick={() => clickHelper(songs.id)}>Add this song to your playlist</button>
+              </li>
           ))}
         </ul>
       ) : (
