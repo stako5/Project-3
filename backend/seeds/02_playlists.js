@@ -8,7 +8,7 @@ const desiredFakePlaylists = 25
 let fakeId = 1
 
 for (let i = 0; i < desiredFakePlaylists; i++) {
-  fakePlaylists.push({id: fakeId, name: faker.music.songName(), description: faker.lorem.sentence() })
+  fakePlaylists.push({id: fakeId, name: faker.music.songName(), description: faker.lorem.sentence(), songs_array: "0" })
   fakeId++;
 }
 
