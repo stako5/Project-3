@@ -74,7 +74,56 @@ app.get('/api/artists', (req, res) => {
             }
         })
 })
-
+//get all artists_songs data
+app.get('/api/artists_songs', (req, res) => {
+    knex('artists_songs')
+        .select('*')
+        .from('artists_songs')
+        .then(data =>  res.status(200).send(data) )
+        .catch((err) => {
+            if (err) {
+                res.status(404).send(`failed to retrieve: ${err}`)
+            }
+        })
+})
+//get all albums_songs data
+app.get('/api/albums_songs', (req, res) => {
+    knex('albums_songs')
+        .select('*')
+        .from('albums_songs')
+        .then(data =>  res.status(200).send(data) )
+        .catch((err) => {
+            if (err) {
+                res.status(404).send(`failed to retrieve: ${err}`)
+            }
+        })
+})
+//get all playlists_songs data
+app.get('/api/playlists_songs', (req, res) => {
+    knex('playlists_songs')
+        .select('*')
+        .from('playlists_songs')
+        .then(data =>  res.status(200).send(data) )
+        .catch((err) => {
+            if (err) {
+                res.status(404).send(`failed to retrieve: ${err}`)
+            }
+        })
+})
+// get all songs by a certain artist
+app.get('/api/songs_by_artist/:artistsId', (req,res) => {
+    let artistsId = req.params.artistsId
+    knex("songs")
+    .select()
+    .from('songs')
+    .where('artists_id', artistsId)
+    .then(data => res.status(200).send(data))
+    .catch((err) => {
+            if (err) {
+                res.status(404).send(`failed to retrieve: ${err}`)
+            }
+        })
+})
 
 
 //end
