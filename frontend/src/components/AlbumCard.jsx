@@ -1,21 +1,24 @@
 import "../CSS/AlbumCard.css";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { APIContext } from "./Context";
 
-function AlbumCard({ songname, id, genre }) {
-  const { songsData } = useContext(APIContext);
-    if (!songsData) return <div>Loading...</div>
+function AlbumCard() {
+  const { albumsData } = useContext(APIContext);
 
-  console.log(songsData);
+  console.log(albumsData);
   return (
     <>
-      {songsData.map(song => 
-    <div className='1' onClick={() => {Details(songsData.id)
-    }}>
-      {song.songname}
-      {song.genre}
-    </div>
-  ) }
+      {albumsData && albumsData.length > 0 ? (
+        <ul>
+          {albumsData.map((album) => (
+            <li key={album.id}>
+              <label>{album.name}</label>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div>No albums to display.</div>
+      )}
     </>
   );
 }
