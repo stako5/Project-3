@@ -23,7 +23,7 @@ function Library() {
         <aside id="sidebar">
           <SideBar />
         </aside>
-        <section id="component-container">
+        <section className="component-container">
           {Array.isArray(songsData) && songsData.length > 0 ? (
             <div className="song-grid">
               {songsData.map((song) => (

@@ -11,6 +11,10 @@ function AlbumCard() {
 
   const navigate = useNavigate("");
 
+  const handleNavigate = (id) => {
+    navigate(`/Album/${id}`);
+  };
+
   return (
     <>
       <header className="card-header">
@@ -22,7 +26,11 @@ function AlbumCard() {
       {albumsData && albumsData.length > 0 ? (
         <ul id="albumlist">
           {albumsData.map((album) => (
-            <li key={album.id} id="album-card">
+            <li
+              key={album.id}
+              id="album-card"
+              onClick={() => handleNavigate(album.id)}
+            >
               <img src={album.cover_art} alt={album.name} id="album-pic" />
               <label>{album.name}</label>
             </li>
@@ -31,6 +39,9 @@ function AlbumCard() {
       ) : (
         <div>No albums to display.</div>
       )}
+      <footer className="card-footer">
+        &copy; 2025 STOPIFY. All rights reserved.
+      </footer>
     </>
   );
 }
