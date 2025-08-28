@@ -52,6 +52,9 @@ app.patch('/api/playlists/:playlists_id', (req, res) => {
     .returning('songs_array')
     .then(data => {
         let output = `${data[0].songs_array}, ${playlistsSong}`
+        if (playlistsSong == undefined){
+            output = `${data[0].songs_array}`
+        }
         knex('playlists')
         .from('playlists')
         .where('id', playlistsId)
